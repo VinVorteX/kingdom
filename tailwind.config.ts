@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				kingdom: {
+					blue: '#1A1F2C',
+					gold: '#E6B325',
+					lightgold: '#F7D56E'
 				}
 			},
 			borderRadius: {
@@ -84,11 +90,47 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'shimmer': {
+					from: {
+						backgroundPosition: '200% 0'
+					},
+					to: {
+						backgroundPosition: '-200% 0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'shimmer': 'shimmer 8s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gold-gradient': 'linear-gradient(45deg, #E6B325, #F7D56E, #E6B325)',
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+				'display': ['Montserrat', 'sans-serif']
 			}
 		}
 	},
