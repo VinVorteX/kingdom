@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DollarSign, Users, Rocket, FileText } from 'lucide-react';
+import { DollarSign, Users, Rocket, FileText, Wallet } from 'lucide-react';
 
 const features = [
   {
