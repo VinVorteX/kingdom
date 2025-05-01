@@ -137,20 +137,24 @@ const Auth = () => {
                   <TabsTrigger value="signup">Sign Up</TabsTrigger>
                 </TabsList>
                 
-                <TabsContent value="login">
-                  <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
-                  <CardDescription>Enter your credentials to access your account.</CardDescription>
-                </TabsContent>
-                
-                <TabsContent value="signup">
-                  <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
-                  <CardDescription>Enter your details to create a new account.</CardDescription>
-                </TabsContent>
+                <div className="pt-4">
+                  {activeTab === "login" ? (
+                    <div>
+                      <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
+                      <CardDescription>Enter your credentials to access your account.</CardDescription>
+                    </div>
+                  ) : (
+                    <div>
+                      <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
+                      <CardDescription>Enter your details to create a new account.</CardDescription>
+                    </div>
+                  )}
+                </div>
               </Tabs>
             </CardHeader>
             
             <CardContent>
-              <TabsContent value="login">
+              {activeTab === "login" ? (
                 <Form {...loginForm}>
                   <form onSubmit={loginForm.handleSubmit(onLoginSubmit)} className="space-y-4">
                     <FormField
@@ -188,9 +192,7 @@ const Auth = () => {
                     </Button>
                   </form>
                 </Form>
-              </TabsContent>
-              
-              <TabsContent value="signup">
+              ) : (
                 <Form {...signupForm}>
                   <form onSubmit={signupForm.handleSubmit(onSignupSubmit)} className="space-y-4">
                     <FormField
@@ -241,7 +243,7 @@ const Auth = () => {
                     </Button>
                   </form>
                 </Form>
-              </TabsContent>
+              )}
             </CardContent>
             
             <CardFooter className="flex justify-center">
